@@ -1,12 +1,13 @@
 const express = require("express");
 const { addTodo, getTodo, updateTodo, deleteTodo } = require("../controller/todoController");
+const { authentication } = require("../middleware/jwt");
 const todoRouter = express.Router();
 
 // todo Route
-todoRouter.post("/",  addTodo);
-todoRouter.get("/",  getTodo);
-todoRouter.put("/:id",  updateTodo);
-todoRouter.delete("/:id",  deleteTodo);
+todoRouter.post("/", authentication, addTodo);
+todoRouter.get("/", authentication, getTodo);
+todoRouter.put("/:id", authentication, updateTodo);
+todoRouter.delete("/:id", authentication, deleteTodo);
 
 
 module.exports = todoRouter;
