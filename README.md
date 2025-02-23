@@ -10,7 +10,7 @@ CRUD operations for managing resources
 
 MongoDB database integration with Mongoose
 
-<!-- Middleware for error handling and validation -->
+Middleware for error handling and validation
 
 Environment-based configuration
 
